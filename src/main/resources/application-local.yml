@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce?currentSchema=admin
+    username: ecommerce
+    password: secret
+  kafka:
+    bootstrap-servers: localhost:9092
+  liquibase:
+    drop-first: false
+
+app:
+  jwt:
+    secret: dev-secret-change-me-please-at-least-32chars-long-123
+
+logging:
+  level:
+    com.ecommerce.admin: DEBUG
