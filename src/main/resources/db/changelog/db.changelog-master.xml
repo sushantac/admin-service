@@ -5,6 +5,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
             http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet id="00_create_schema" author="sushant">
+        <sql>CREATE SCHEMA IF NOT EXISTS admin</sql>
+    </changeSet>
+
     <include file="db/changelog/v1.0/01_dashboard_snapshots.xml"/>
     <include file="db/changelog/v1.0/02_audit_entries.xml"/>
     <include file="db/changelog/v1.0/03_order_projections.xml"/>
