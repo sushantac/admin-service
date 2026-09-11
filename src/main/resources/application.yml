@@ -25,7 +25,7 @@ spring:
     default-schema: admin
 
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+    bootstrap.servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
     consumer:
       group-id: admin-service
       enable-auto-commit: false
