@@ -62,3 +62,6 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+  liquibase:
+    create-schema: true
