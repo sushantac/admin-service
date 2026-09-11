@@ -51,13 +51,12 @@ spring:
         jwt:
           secret: ${JWT_SECRET:dev-secret-change-me-please-at-least-32chars-long-123}
 
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
 server:
   port: 8085
   shutdown: graceful
-
-spring:
-  lifecycle:
-    timeout-per-shutdown-phase: 20s
 
 management:
   endpoints:
