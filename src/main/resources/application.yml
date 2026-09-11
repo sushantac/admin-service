@@ -24,24 +24,25 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.xml
     default-schema: admin
 
-  kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
-    consumer:
+  spring:
+    kafka:
+    bootstrap.servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+      consumer:
       group-id: admin-service
       enable-auto-commit: false
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
+        properties:
         spring.json.trusted.packages: "com.ecommerce.admin.dto,com.ecommerce.*,com.company.orderapi.*"
         spring.json.value.default.type: java.lang.Object
         isolation.level: read_committed
-    producer:
+      producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       acks: all
       retries: 3
-      properties:
+        properties:
         spring.json.add.type.headers: false
 
   security:
